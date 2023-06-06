@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "f5W9o0soqvw2mavgUGZ4xIQtnWVDnuhtyyro8D9RZVABfMdyC4AfF+bviCEJMGT6PuEH2okruECJjK5KGY35mg==",
+  "dgSpecHash": "/JotR0FAMF23lQh/Dt+sMsut1aBFTkOG3PWWdeSz2QJXWad1cFfqLpwWg/dfOGIWtKu2aVhjJhHZU/VwYQXI1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\QueroServicos\\QueroServicos.csproj",
+  "projectFilePath": "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\QueroServicos\\BackEnd\\QueroServicos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aleso\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\aleso\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
