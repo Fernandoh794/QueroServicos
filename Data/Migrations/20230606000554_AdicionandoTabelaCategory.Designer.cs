@@ -9,7 +9,7 @@ using QueroServicos.Data;
 
 namespace QueroServicos.Migrations
 {
-    [DbContext(typeof(APIDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20230606000554_AdicionandoTabelaCategory")]
     partial class AdicionandoTabelaCategory
     {

@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionStringMysql = builder.Configuration.GetConnectionString("ConnectionMysql");
-builder.Services.AddDbContext<APIDbContext>(x => x.UseMySql(
+builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseMySql(
     connectionStringMysql, ServerVersion.Parse("10.4.25-MariaDB")));
 
 

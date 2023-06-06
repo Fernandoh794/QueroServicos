@@ -14,9 +14,9 @@ namespace QueroServicos.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly APIDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public CategoriesController(APIDbContext context)
+        public CategoriesController(ApplicationDbContext context)
         {
             _context = context;
         }

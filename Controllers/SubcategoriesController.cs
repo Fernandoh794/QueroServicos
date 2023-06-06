@@ -14,9 +14,9 @@ namespace QueroServicos.Controllers
     [ApiController]
     public class SubcategoriesController : ControllerBase
     {
-        private readonly APIDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public SubcategoriesController(APIDbContext context)
+        public SubcategoriesController(ApplicationDbContext context)
         {
             _context = context;
         }
