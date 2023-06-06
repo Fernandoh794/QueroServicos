@@ -16,5 +16,6 @@ namespace QueroServicos.Data
         public DbSet<City> Cities { get; set; }
         public DbSet<Neighborhood> neighborhoods { get; set; }
         public DbSet<Address> Address { get; set; }
+        public DbSet<Contact> Contact { get; set; }
     }
 }
