@@ -11,9 +11,8 @@ namespace QueroServicos.Models
         [StringLength(100)]
         public string Description { get; set; }
 
-        public ICollection<Subcategory> Subcategories { get; set; }
+        public List<Subcategory> Subcategories { get; set; }
     }
-
     public class Subcategory
     {
         [Key]
@@ -24,6 +23,8 @@ namespace QueroServicos.Models
         public string Description { get; set; }
 
         public int CategoryId { get; set; }
+
+        [Required]
         public Category Category { get; set; }
     }
 }
