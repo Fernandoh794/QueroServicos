@@ -12,55 +12,55 @@ namespace QueroServicos.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriasController : ControllerBase
+    public class SubcategoriesController : ControllerBase
     {
         private readonly APIDbContext _context;
 
-        public CategoriasController(APIDbContext context)
+        public SubcategoriesController(APIDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Categorias
+        // GET: api/Subcategories
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Categorias>>> GetCategorias()
+        public async Task<ActionResult<IEnumerable<Subcategory>>> GetSubcategories()
         {
-          if (_context.Categorias == null)
+          if (_context.Subcategories == null)
           {
               return NotFound();
           }
-            return await _context.Categorias.ToListAsync();
+            return await _context.Subcategories.ToListAsync();
         }
 
-        // GET: api/Categorias/5
+        // GET: api/Subcategories/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Categorias>> GetCategorias(int id)
+        public async Task<ActionResult<Subcategory>> GetSubcategory(int id)
         {
-          if (_context.Categorias == null)
+          if (_context.Subcategories == null)
           {
               return NotFound();
           }
-            var categorias = await _context.Categorias.FindAsync(id);
+            var subcategory = await _context.Subcategories.FindAsync(id);
 
-            if (categorias == null)
+            if (subcategory == null)
             {
                 return NotFound();
             }
 
-            return categorias;
+            return subcategory;
         }
 
-        // PUT: api/Categorias/5
+        // PUT: api/Subcategories/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCategorias(int id, Categorias categorias)
+        public async Task<IActionResult> PutSubcategory(int id, Subcategory subcategory)
         {
-            if (id != categorias.Id)
+            if (id != subcategory.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(categorias).State = EntityState.Modified;
+            _context.Entry(subcategory).State = EntityState.Modified;
 
             try
             {
@@ -68,7 +68,7 @@ namespace QueroServicos.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CategoriasExists(id))
+                if (!SubcategoryExists(id))
                 {
                     return NotFound();
                 }
@@ -81,44 +81,44 @@ namespace QueroServicos.Controllers
             return NoContent();
         }
 
-        // POST: api/Categorias
+        // POST: api/Subcategories
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Categorias>> PostCategorias(Categorias categorias)
+        public async Task<ActionResult<Subcategory>> PostSubcategory(Subcategory subcategory)
         {
-          if (_context.Categorias == null)
+          if (_context.Subcategories == null)
           {
-              return Problem("Entity set 'APIDbContext.Categorias'  is null.");
+              return Problem("Entity set 'APIDbContext.Subcategories'  is null.");
           }
-            _context.Categorias.Add(categorias);
+            _context.Subcategories.Add(subcategory);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCategorias", new { id = categorias.Id }, categorias);
+            return CreatedAtAction("GetSubcategory", new { id = subcategory.Id }, subcategory);
         }
 
-        // DELETE: api/Categorias/5
+        // DELETE: api/Subcategories/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCategorias(int id)
+        public async Task<IActionResult> DeleteSubcategory(int id)
         {
-            if (_context.Categorias == null)
+            if (_context.Subcategories == null)
             {
                 return NotFound();
             }
-            var categorias = await _context.Categorias.FindAsync(id);
-            if (categorias == null)
+            var subcategory = await _context.Subcategories.FindAsync(id);
+            if (subcategory == null)
             {
                 return NotFound();
             }
 
-            _context.Categorias.Remove(categorias);
+            _context.Subcategories.Remove(subcategory);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool CategoriasExists(int id)
+        private bool SubcategoryExists(int id)
         {
-            return (_context.Categorias?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Subcategories?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
