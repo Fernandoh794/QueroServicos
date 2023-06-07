@@ -181,24 +181,6 @@ namespace QueroServicos.Migrations
                     b.ToTable("Subcategories");
                 });
 
-            modelBuilder.Entity("Type", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Description")
-                        .IsUnique();
-
-                    b.ToTable("Types");
-                });
 
             modelBuilder.Entity("QueroServicos.Models.Address", b =>
                 {

@@ -17,14 +17,8 @@ namespace QueroServicos.Data
         public DbSet<Neighborhood> neighborhoods { get; set; }
         public DbSet<Address> Address { get; set; }
         public DbSet<Contact> Contact { get; set; }
-        public DbSet<Type> Types { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Type>()
-                .HasIndex(t => t.Description)
-                .IsUnique();
-
-            base.OnModelCreating(modelBuilder);
         }
     }
     
