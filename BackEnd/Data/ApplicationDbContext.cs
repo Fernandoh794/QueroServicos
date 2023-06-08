@@ -17,8 +17,24 @@ namespace QueroServicos.Data
         public DbSet<Neighborhood> neighborhoods { get; set; }
         public DbSet<Address> Address { get; set; }
         public DbSet<Contact> Contact { get; set; }
+        public DbSet<User> Users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.CPF)
+                .IsUnique();
+
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.CNPJ)
+                .IsUnique();
+
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
+
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Number)
+                .IsUnique();
         }
     }
     
