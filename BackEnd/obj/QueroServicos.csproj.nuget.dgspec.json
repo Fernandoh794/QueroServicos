@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\QueroServicos\\BackEnd\\QueroServicos.csproj": {}
+    "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\QueroServicos\\BackEnd\\QueroServicos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\QueroServicos\\BackEnd\\QueroServicos.csproj": {
+    "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\QueroServicos\\BackEnd\\QueroServicos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\QueroServicos\\BackEnd\\QueroServicos.csproj",
+        "projectUniqueName": "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\QueroServicos\\BackEnd\\QueroServicos.csproj",
         "projectName": "QueroServicos",
-        "projectPath": "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\QueroServicos\\BackEnd\\QueroServicos.csproj",
+        "projectPath": "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\QueroServicos\\BackEnd\\QueroServicos.csproj",
         "packagesPath": "C:\\Users\\aleso\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\QueroServicos\\BackEnd\\obj\\",
+        "outputPath": "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\QueroServicos\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
