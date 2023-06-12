@@ -52,3 +52,4 @@
 #### AVALIAR USUARIO o contratante poderá realizar a avaliação do profissional com até 5 estrelas ####
 
 
+no front precisa instalar a bibliotecas react-router-dom, material-ui
