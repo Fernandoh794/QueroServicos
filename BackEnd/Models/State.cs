@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Reflection.Metadata;
 
 namespace QueroServicos.Models
 {
@@ -10,9 +11,14 @@ namespace QueroServicos.Models
 
         public string Name { get; set; }
 
-        [ForeignKey("Country")]
+        public string UF { get; set; }
+
+        public int? IBGE { get; set; }
+
+        public string DDD { get; set; }
+
         public int CountryId { get; set; }
 
-        public virtual Country Country { get; set; }
+        public Country Country { get; set; } = null!;
     }
 }

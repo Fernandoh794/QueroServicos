@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.Extensions.Hosting;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QueroServicos.Models
@@ -14,7 +15,8 @@ namespace QueroServicos.Models
         public string NamePt { get; set; }
 
         public string Acronym { get; set; }
-
         public int? Bacen { get; set; }
+
+        public ICollection<State> State { get; } = new List<State>();
     }
 }

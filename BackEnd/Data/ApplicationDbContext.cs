@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using QueroServicos.Models;
+using System.Reflection.Metadata;
 
 namespace QueroServicos.Data
 {
@@ -20,6 +22,12 @@ namespace QueroServicos.Data
         public DbSet<User> Users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<State>()
+                .HasOne(e => e.Country)
+                .WithMany(e => e.State)
+                .HasForeignKey(e => e.CountryId)
+                .IsRequired();
+
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.CPF)
                 .IsUnique();

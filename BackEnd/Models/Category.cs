@@ -11,7 +11,7 @@ namespace QueroServicos.Models
         [StringLength(100)]
         public string Description { get; set; }
 
-        public List<Subcategory> Subcategories { get; set; }
+        public virtual List<Subcategory>? Subcategories { get; set; }
     }
     public class Subcategory
     {

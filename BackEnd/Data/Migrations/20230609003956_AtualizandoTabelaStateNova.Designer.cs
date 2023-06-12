@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QueroServicos.Data;
 
@@ -10,9 +11,11 @@ using QueroServicos.Data;
 namespace QueroServicos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class APIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230609003956_AtualizandoTabelaStateNova")]
+    partial class AtualizandoTabelaStateNova
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,7 +39,7 @@ namespace QueroServicos.Migrations
 
                     b.HasIndex("NeighborhoodId");
 
-                    b.ToTable("Address", (string)null);
+                    b.ToTable("Address");
                 });
 
             modelBuilder.Entity("QueroServicos.Models.Category", b =>
@@ -52,7 +55,7 @@ namespace QueroServicos.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("QueroServicos.Models.City", b =>
@@ -72,7 +75,7 @@ namespace QueroServicos.Migrations
 
                     b.HasIndex("StateId");
 
-                    b.ToTable("Cities", (string)null);
+                    b.ToTable("Cities");
                 });
 
             modelBuilder.Entity("QueroServicos.Models.Contact", b =>
@@ -103,7 +106,7 @@ namespace QueroServicos.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Contact", (string)null);
+                    b.ToTable("Contact");
                 });
 
             modelBuilder.Entity("QueroServicos.Models.Country", b =>
@@ -130,7 +133,7 @@ namespace QueroServicos.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Countries", (string)null);
+                    b.ToTable("Countries");
                 });
 
             modelBuilder.Entity("QueroServicos.Models.Neighborhood", b =>
@@ -150,7 +153,7 @@ namespace QueroServicos.Migrations
 
                     b.HasIndex("CityId");
 
-                    b.ToTable("neighborhoods", (string)null);
+                    b.ToTable("neighborhoods");
                 });
 
             modelBuilder.Entity("QueroServicos.Models.State", b =>
@@ -181,7 +184,7 @@ namespace QueroServicos.Migrations
 
                     b.HasIndex("CountryId");
 
-                    b.ToTable("States", (string)null);
+                    b.ToTable("States");
                 });
 
             modelBuilder.Entity("QueroServicos.Models.Subcategory", b =>
@@ -202,7 +205,7 @@ namespace QueroServicos.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Subcategories", (string)null);
+                    b.ToTable("Subcategories");
                 });
 
             modelBuilder.Entity("QueroServicos.Models.User", b =>
@@ -289,7 +292,7 @@ namespace QueroServicos.Migrations
 
                     b.HasIndex("SubcategoryId");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("QueroServicos.Models.Address", b =>
