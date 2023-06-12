@@ -1,0 +1,68 @@
+/*Login*/
+#containerLogin{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#areaLeftLogin{
+    width: 50%;
+    background-color: #390099;
+    height: 100vh;
+    font-size: 35px;
+    text-align: end;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+}
+
+#faixaBranca{
+    width: 80%;
+    height: 5vh;
+    background-color: #FFF;
+    margin-bottom: 20%;
+}
+
+#areaRightLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 50%;
+}
+
+#areaLogin{
+    background-color: #F3F3F3;
+    width: 60%;
+    height: 65%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*Login end*/
+
+/*Register*/
+#containerRegister{
+    display: flex;
+    flex-direction: row;
+}
+
+#areaLeftRegister{
+    width: 50%;
+    background-color: #390099;
+    font-size: 35px;
+    text-align: end;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+}
+
+#areaRightRegister{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    flex-direction: column;
+}
+/*Register end*/

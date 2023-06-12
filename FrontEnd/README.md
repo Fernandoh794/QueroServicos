@@ -1,54 +1,70 @@
-## Quero Serviços
+# Getting Started with Create React App
 
-### Autores:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- Álesson Carlos Costa dos Santos;
-- Fabio Silva Martins Júnior;
-- Fernando Henrique Santana.
+## Available Scripts
 
-#### Aplicação voltada a divulgação e contratação de serviços profissionais, unindo prestadores de serviços a pessoas que necessitam de assistências.
+In the project directory, you can run:
 
-- Construção;
-- Instalação;
-- Reformas e Reparos;
-- Serviços Gerais.
+### `npm start`
 
-### Como o Sistema funciona:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-#### O sistema contará com dois tipos de usuários, o usuário _Profissional_ e o usuáro _Contratante_.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-##### O usuario _Profissional_ realizará o seu cadastro com todas as suas informaçoes de contato e suas especializações, incluindo um calendario com suas datas disponíveis.
+### `npm test`
 
-##### O usuário _Contratante_ irá contratante irá fazer o cadastro com seus dados válidos para a utilização da aplicação
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-#### O usuario _Contratante_ realizará o cadastro com seus dados e terá a possibilidade de buscar os profissionais através de categorias pré-estabelecidas e buscar informações de contato.####
+### `npm run build`
 
-### Requisitos Funcionais###
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-#### REALIZAR CADASTRO o usuário poderá realizar o cadastro como dois tipos de usuários, o usuário profissional e o contratante
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-#### REALIZAR LOGIN poder logar com email e senha cadastrados
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-#### RECUPERAR SENHA encaminhar um email com a senha como recuperação caso o usuário a perca
+### `npm run eject`
 
-#### BUSCAR PROFISSIONAIS o contratante poderá realizar buscar por profissionais com filtros como categorias, locais de atuação e avaliação
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-#### VISUALIZAR PRODIFISSIONAIS ser possível verificar todas as informações do profissional como dados de contato, avaliação, comentários por outros contratantes e um calendário com datas disponíveis
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-#### BLOQUEIO DE PALAVRAS OFENSIVAS bloquear palavras ofensivas situadas tanto no cartão do profissional como no comentário fornecido pelo contratante
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-#### CRIAR CARTÃO DO PROFISSIONAL o usuário profissional deve poder criar seu cartão com informações de contato, fotos de serviços realizados, calendário de datas disponíveis, etc. ####
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-#### EDIÇÂO DE DADOS tanto o usuário profissional como o contratante poderá realizar edição de suas informações ####
+## Learn More
 
-#### FAVORITAR PROFISSIONAIS o contratante poderá favoritar os profissionais que preferirem ####
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-#### REDIRECIONAR CONTRATANTE PARA REDE SOCIAIS possibilidade de redirecionar o contratante para mídias de contato do profissional ####
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-#### TRANSFORMAR TIPO DE USUARIO o profissional poderá virar contratante ou o contrario disso ####
+### Code Splitting
 
-#### DELETAR CADASTRO o usuário poderá deletar sua conta da plataforma ####
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-#### AVALIAR USUARIO o contratante poderá realizar a avaliação do profissional com até 5 estrelas ####
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
