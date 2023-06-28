@@ -1423,3 +1423,4 @@ D:\Projetos\QueroServicos\BackEnd\obj\Debug\net6.0\scopedcss\bundle\QueroServico
 D:\Projetos\QueroServicos\BackEnd\obj\Debug\net6.0\QueroServicos.csproj.CopyComplete
 D:\Projetos\QueroServicos\BackEnd\obj\Debug\net6.0\QueroServicos.genruntimeconfig.cache
 D:\Projetos\QueroServicos\BackEnd\obj\Debug\net6.0\ref\QueroServicos.dll
+D:\Projetos\QueroServicos\BackEnd\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
