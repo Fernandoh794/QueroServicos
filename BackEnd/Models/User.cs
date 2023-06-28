@@ -23,11 +23,15 @@ namespace QueroServicos.Models
         public string LastName { get; set; }
 
         [Required]
-        [StringLength(11, MinimumLength = 11)]
-        public string CPF { get; set; }
+        [StringLength(14, MinimumLength = 11)]
+        public string CpfCnpj { get; set; }
 
-        [StringLength(14)]
-        public string CNPJ { get; set; }
+
+        [Required]
+        [RegularExpression("^[1-2]$")]
+        public string TipoPessoa { get; set; }
+
+
 
         [Required]
         [MaxLength(60)]
@@ -39,21 +43,6 @@ namespace QueroServicos.Models
 
         [StringLength(13)]
         public string Number { get; set; }
-
-        public int? AddressId { get; set; }
-
-        [ForeignKey("AddressId")]
-        public Address Address { get; set; }
-
-        public int? SubcategoryId { get; set; }
-
-        [ForeignKey("SubcategoryId")]
-        public Subcategory Subcategory { get; set; }
-
-        public int? ContactId { get; set; }
-
-        [ForeignKey("ContactId")]
-        public Contact Contact { get; set; }
 
         [Required]
         public DateTime CreatedAt { get; set; }

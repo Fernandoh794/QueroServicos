@@ -29,14 +29,6 @@ namespace QueroServicos.Data
                 .IsRequired();
 
             modelBuilder.Entity<User>()
-                .HasIndex(u => u.CPF)
-                .IsUnique();
-
-            modelBuilder.Entity<User>()
-                .HasIndex(u => u.CNPJ)
-                .IsUnique();
-
-            modelBuilder.Entity<User>()
                 .HasIndex(u => u.Email)
                 .IsUnique();
 

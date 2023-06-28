@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QueroServicos.Data;
 
@@ -10,9 +11,11 @@ using QueroServicos.Data;
 namespace QueroServicos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class APIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230628001111_AtualizandoTabelaUser")]
+    partial class AtualizandoTabelaUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -211,7 +214,7 @@ namespace QueroServicos.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("CpfCnpj")
+                    b.Property<string>("CPF_CNPJ")
                         .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("varchar(14)");
@@ -244,7 +247,7 @@ namespace QueroServicos.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("varchar(30)");
 
-                    b.Property<string>("TipoPessoa")
+                    b.Property<string>("TIPO_PESSOA")
                         .IsRequired()
                         .HasColumnType("longtext");
 
