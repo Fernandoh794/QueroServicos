@@ -28,10 +28,8 @@ namespace QueroServicos.Controllers
 
         private User AuthenticateUser(User user)
         {
-            // Procurar o usuário no banco de dados com base no e-mail e senha fornecidos
             var authenticatedUser = _context.Users.FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
 
-            // Retornar o usuário autenticado ou null caso não seja encontrado
             return authenticatedUser;
         }
 
@@ -50,10 +48,14 @@ namespace QueroServicos.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Login(string email, string password)
+        public IActionResult Login([FromBody] LoginModel model)
         {
             IActionResult response = Unauthorized();
-            var user = new User { Email = email, Password = password };
+            var user = new User
+            {
+                Email = model.Email,
+                Password = model.Password
+            };
             var authenticatedUser = AuthenticateUser(user);
 
             if (authenticatedUser != null)
