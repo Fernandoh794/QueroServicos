@@ -5,6 +5,8 @@ using QueroServicos.Data;
 using QueroServicos.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using BCrypt.Net;
+
 
 namespace QueroServicos.Controllers
 {
@@ -25,10 +27,26 @@ namespace QueroServicos.Controllers
             _context = dbContext;
         }
 
+        /**
+         * AuthenticateUser
+         ** 
+         ** @param User user
+         ** @return User
+         *  */
 
         private User AuthenticateUser(User user)
         {
-            var authenticatedUser = _context.Users.FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
+            var authenticatedUser = _context.Users.FirstOrDefault(u => u.Email == user.Email);
+
+            if (authenticatedUser != null)
+            {
+                bool isPasswordValid = BCrypt.Net.BCrypt.Verify(user.Password, authenticatedUser.Password);
+
+                if (!isPasswordValid)
+                {
+                    authenticatedUser = null; 
+                }
+            }
 
             return authenticatedUser;
         }

@@ -12,10 +12,6 @@ namespace QueroServicos.Models
 
         [Required]
         [MaxLength(20)]
-        public string Type { get; set; }
-
-        [Required]
-        [MaxLength(20)]
         public string FirstName { get; set; }
 
         [Required]
@@ -32,13 +28,11 @@ namespace QueroServicos.Models
         public string TipoPessoa { get; set; }
 
 
-
         [Required]
         [MaxLength(60)]
         public string Email { get; set; }
 
         [Required]
-        [MaxLength(30)]
         public string Password { get; set; }
 
         [StringLength(13)]

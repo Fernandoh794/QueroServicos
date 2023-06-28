@@ -1424,3 +1424,4 @@ D:\Projetos\QueroServicos\BackEnd\obj\Debug\net6.0\QueroServicos.csproj.CopyComp
 D:\Projetos\QueroServicos\BackEnd\obj\Debug\net6.0\QueroServicos.genruntimeconfig.cache
 D:\Projetos\QueroServicos\BackEnd\obj\Debug\net6.0\ref\QueroServicos.dll
 D:\Projetos\QueroServicos\BackEnd\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Projetos\QueroServicos\BackEnd\bin\Debug\net6.0\BCrypt.Net-Next.dll

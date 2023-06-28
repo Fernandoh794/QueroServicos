@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QueroServicos.Data;
 using QueroServicos.Models;
+using BCrypt.Net;
+
 
 namespace QueroServicos.Controllers
 {
@@ -92,6 +89,10 @@ namespace QueroServicos.Controllers
           {
               return Problem("Entity set 'ApplicationDbContext.Users'  is null.");
           }
+
+          string passwordHash = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            user.Password = passwordHash;
+
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 

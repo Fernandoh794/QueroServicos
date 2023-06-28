@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "EwMLQ577Q4muqkxiCMewwHQaDyCdJJYTXuFX1msvczalfBV97dhmdJkSPCtTt9AQE5PogLQJTvFl2d6f8DmECQ==",
+  "dgSpecHash": "ft9Llg5bFyy4lut2y+2NlWpKAycY2oCb8maBCWfsQzioVBIVPnnmRCu36x5MzveKgoGK/UZ7+cJqh8QQ+sq7sw==",
   "success": true,
   "projectFilePath": "D:\\Projetos\\QueroServicos\\BackEnd\\QueroServicos.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Fernando\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Fernando\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Fernando\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Fernando\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
