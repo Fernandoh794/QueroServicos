@@ -159,21 +159,14 @@ namespace QueroServicos.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("CountryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DDD")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int?>("IBGE")
+                    b.Property<int?>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("UF")
+                    b.Property<string>("Sigla")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -296,13 +289,9 @@ namespace QueroServicos.Migrations
 
             modelBuilder.Entity("QueroServicos.Models.State", b =>
                 {
-                    b.HasOne("QueroServicos.Models.Country", "Country")
+                    b.HasOne("QueroServicos.Models.Country", null)
                         .WithMany("State")
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Country");
+                        .HasForeignKey("CountryId");
                 });
 
             modelBuilder.Entity("QueroServicos.Models.Subcategory", b =>

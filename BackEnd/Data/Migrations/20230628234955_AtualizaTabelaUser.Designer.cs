@@ -11,8 +11,8 @@ using QueroServicos.Data;
 namespace QueroServicos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230608233836_AtualizandoTabelaCountry")]
-    partial class AtualizandoTabelaCountry
+    [Migration("20230628234955_AtualizaTabelaUser")]
+    partial class AtualizaTabelaUser
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -165,7 +165,18 @@ namespace QueroServicos.Migrations
                     b.Property<int>("CountryId")
                         .HasColumnType("int");
 
+                    b.Property<string>("DDD")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("IBGE")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UF")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -203,23 +214,10 @@ namespace QueroServicos.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("AddressId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.Property<string>("CNPJ")
+                    b.Property<string>("CpfCnpj")
                         .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("varchar(14)");
-
-                    b.Property<string>("CPF")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("varchar(11)");
-
-                    b.Property<int?>("ContactId")
-                        .IsRequired()
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
@@ -246,40 +244,22 @@ namespace QueroServicos.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("varchar(30)");
+                        .HasColumnType("longtext");
 
-                    b.Property<int?>("SubcategoryId")
+                    b.Property<string>("TipoPessoa")
                         .IsRequired()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("varchar(20)");
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AddressId");
-
-                    b.HasIndex("CNPJ")
-                        .IsUnique();
-
-                    b.HasIndex("CPF")
-                        .IsUnique();
-
-                    b.HasIndex("ContactId");
-
                     b.HasIndex("Email")
                         .IsUnique();
 
                     b.HasIndex("Number")
                         .IsUnique();
-
-                    b.HasIndex("SubcategoryId");
 
                     b.ToTable("Users");
                 });
@@ -320,7 +300,7 @@ namespace QueroServicos.Migrations
             modelBuilder.Entity("QueroServicos.Models.State", b =>
                 {
                     b.HasOne("QueroServicos.Models.Country", "Country")
-                        .WithMany()
+                        .WithMany("State")
                         .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -339,36 +319,14 @@ namespace QueroServicos.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("QueroServicos.Models.User", b =>
-                {
-                    b.HasOne("QueroServicos.Models.Address", "Address")
-                        .WithMany()
-                        .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("QueroServicos.Models.Contact", "Contact")
-                        .WithMany()
-                        .HasForeignKey("ContactId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("QueroServicos.Models.Subcategory", "Subcategory")
-                        .WithMany()
-                        .HasForeignKey("SubcategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Address");
-
-                    b.Navigation("Contact");
-
-                    b.Navigation("Subcategory");
-                });
-
             modelBuilder.Entity("QueroServicos.Models.Category", b =>
                 {
                     b.Navigation("Subcategories");
+                });
+
+            modelBuilder.Entity("QueroServicos.Models.Country", b =>
+                {
+                    b.Navigation("State");
                 });
 #pragma warning restore 612, 618
         }

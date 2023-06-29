@@ -11,14 +11,7 @@ namespace QueroServicos.Models
 
         public string Name { get; set; }
 
-        public string UF { get; set; }
+        public string Sigla { get; set; }
 
-        public int? IBGE { get; set; }
-
-        public string DDD { get; set; }
-
-        public int CountryId { get; set; }
-
-        public Country Country { get; set; } = null!;
     }
 }

@@ -11,8 +11,8 @@ using QueroServicos.Data;
 namespace QueroServicos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230628001602_AtualizandoTabelaUser")]
-    partial class AtualizandoTabelaUser
+    [Migration("20230629001016_InsertInTableCities")]
+    partial class InsertInTableCities
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -162,21 +162,14 @@ namespace QueroServicos.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("CountryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DDD")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int?>("IBGE")
+                    b.Property<int?>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("UF")
+                    b.Property<string>("Sigla")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -244,17 +237,11 @@ namespace QueroServicos.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("varchar(30)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("TipoPessoa")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("varchar(20)");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");
@@ -305,13 +292,9 @@ namespace QueroServicos.Migrations
 
             modelBuilder.Entity("QueroServicos.Models.State", b =>
                 {
-                    b.HasOne("QueroServicos.Models.Country", "Country")
+                    b.HasOne("QueroServicos.Models.Country", null)
                         .WithMany("State")
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Country");
+                        .HasForeignKey("CountryId");
                 });
 
             modelBuilder.Entity("QueroServicos.Models.Subcategory", b =>
