@@ -4,7 +4,7 @@ import Image from '../assets/home.png'
 function Home() {
     return (
         <div id='area1'>
-            <div id='areaLeft'>
+            <div id='areaLeftHome'>
                 <span style={{ fontSize: 35, alignSelf: 'end', textAlign: 'end', marginRight: '20%' }}>A melhor <strong>solução</strong><br />
                     para o seu <span style={{ color: '#390099' }}>problema.</span></span>
                 <div id='faixa'></div>
@@ -12,7 +12,7 @@ function Home() {
                     encontre o profissional ideal para<br />cada tipo de problema.
                 </span>
             </div>
-            <div id='areaRight'>
+            <div id='areaRightHome'>
                 <img src={Image} alt='HomeImage' style={{ height: '75vh' }} />
             </div>
         </div>

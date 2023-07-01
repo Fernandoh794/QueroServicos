@@ -84,7 +84,5 @@ namespace QueroServicos.Controllers
 
             return response;
         }
-
-
     }
 }

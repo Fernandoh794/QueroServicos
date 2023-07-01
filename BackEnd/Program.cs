@@ -6,6 +6,10 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+#region [Cors]
+builder.Services.AddCors();
+#endregion
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
@@ -40,6 +44,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+#region[Cors]
+app.UseCors(c =>
+{
+    c.AllowAnyHeader();
+    c.AllowAnyMethod();
+    c.AllowAnyOrigin();
+});
+#endregion
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
