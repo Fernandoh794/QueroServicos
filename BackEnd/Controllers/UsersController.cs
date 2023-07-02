@@ -90,7 +90,17 @@ namespace QueroServicos.Controllers
               return Problem("Entity set 'ApplicationDbContext.Users'  is null.");
           }
 
-          string passwordHash = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            bool userExists = await _context.Users.AnyAsync(u => u.Email == user.Email);
+
+            if (userExists)
+            {
+                return BadRequest("Email já Registrado.");
+            }
+
+
+
+
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(user.Password);
             user.Password = passwordHash;
 
             _context.Users.Add(user);

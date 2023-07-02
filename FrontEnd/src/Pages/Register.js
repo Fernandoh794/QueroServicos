@@ -26,6 +26,9 @@ function Register() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordsMatch, setPasswordsMatch] = useState(true);
   const [showPassword, setShowPassword] = React.useState(false);
+  const [error, setError] = useState(false);
+  const [errorText, setErrorText] = useState('');
+
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -64,7 +67,10 @@ function Register() {
           console.log(response.data);
         })
         .catch((error) => {
-          console.log("deu erro viu");
+          if(error.response.status === 400) {
+            setErrorText(error.response.data);
+            setError(true);
+          }
         });
     } else {
       setPasswordsMatch(false);
@@ -285,6 +291,12 @@ function Register() {
             As senhas digitadas não são iguais.
           </Alert>
         )}
+        {error && (
+          <Alert severity="error" style={{ marginBottom: 22, width: '60%' }}>
+            {errorText}
+          </Alert>
+        ) 
+        }
         <br></br>
         <Select
           style={{ marginBottom: 22, width: '60%' }}
@@ -293,6 +305,7 @@ function Register() {
           value={type}
           label="Tipo"
           onChange={handleChange}
+          placeholder="Tipo"
         >
           <MenuItem value="1">Pessoa Física</MenuItem>
           <MenuItem value="2">Pessoa Jurídica</MenuItem>

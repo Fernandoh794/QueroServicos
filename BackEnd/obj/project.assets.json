@@ -10602,19 +10602,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Fabio Martins\\.nuget\\packages\\": {}
+    "C:\\Users\\Fernando\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fabio Martins\\Desktop\\WEB II\\QueroServicos\\BackEnd\\QueroServicos.csproj",
+      "projectUniqueName": "D:\\Projetos\\QueroServicos\\BackEnd\\QueroServicos.csproj",
       "projectName": "QueroServicos",
-      "projectPath": "C:\\Users\\Fabio Martins\\Desktop\\WEB II\\QueroServicos\\BackEnd\\QueroServicos.csproj",
-      "packagesPath": "C:\\Users\\Fabio Martins\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fabio Martins\\Desktop\\WEB II\\QueroServicos\\BackEnd\\obj\\",
+      "projectPath": "D:\\Projetos\\QueroServicos\\BackEnd\\QueroServicos.csproj",
+      "packagesPath": "C:\\Users\\Fernando\\.nuget\\packages\\",
+      "outputPath": "D:\\Projetos\\QueroServicos\\BackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Fabio Martins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Fernando\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10622,7 +10622,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -10701,7 +10701,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }
