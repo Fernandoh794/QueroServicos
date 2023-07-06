@@ -190,7 +190,7 @@ function Register() {
             label="Fantasia"
             variant="outlined"
           />
-          <InputMask mask="99.999.999/9999-99" maskChar=" " onChange={handleCpfChange}>
+          <InputMask mask="99999999999999" maskChar=" " onChange={handleCpfChange}>
             {() => (
               <TextField
                 style={{ marginBottom: 22, width: '60%' }}
@@ -207,7 +207,7 @@ function Register() {
             label="E-mail"
             variant="outlined"
           />
-          <InputMask mask="(99) 99999-9999" maskChar=" " onChange={handleTelefoneChange}>
+          <InputMask mask="99 99999-9999" maskChar=" " onChange={handleTelefoneChange}>
             {() => (
               <TextField
                 style={{ marginBottom: 22, width: '60%' }}
