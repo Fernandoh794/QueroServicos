@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fabio Martins\\Desktop\\WEB II\\QueroServicos\\BackEnd\\QueroServicos.csproj": {}
+    "C:\\Users\\cara-\\source\\repos\\QueroServicos\\BackEnd\\QueroServicos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fabio Martins\\Desktop\\WEB II\\QueroServicos\\BackEnd\\QueroServicos.csproj": {
+    "C:\\Users\\cara-\\source\\repos\\QueroServicos\\BackEnd\\QueroServicos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fabio Martins\\Desktop\\WEB II\\QueroServicos\\BackEnd\\QueroServicos.csproj",
+        "projectUniqueName": "C:\\Users\\cara-\\source\\repos\\QueroServicos\\BackEnd\\QueroServicos.csproj",
         "projectName": "QueroServicos",
-        "projectPath": "C:\\Users\\Fabio Martins\\Desktop\\WEB II\\QueroServicos\\BackEnd\\QueroServicos.csproj",
-        "packagesPath": "C:\\Users\\Fabio Martins\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fabio Martins\\Desktop\\WEB II\\QueroServicos\\BackEnd\\obj\\",
+        "projectPath": "C:\\Users\\cara-\\source\\repos\\QueroServicos\\BackEnd\\QueroServicos.csproj",
+        "packagesPath": "C:\\Users\\cara-\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cara-\\source\\repos\\QueroServicos\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Fabio Martins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cara-\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,7 +61,7 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.16, )"
+              "version": "[6.0.18, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -71,7 +71,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.13, )"
+              "version": "[6.0.14, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
@@ -101,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

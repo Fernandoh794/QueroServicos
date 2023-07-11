@@ -15,14 +15,14 @@ namespace QueroServicos.Migrations
                                 table: "Users");
 
             migrationBuilder.RenameColumn(
-                               name: "CPF",
-                                              table: "Users",
-                                                             newName: "CpfCnpj");
-
-            migrationBuilder.AddColumn<String>(
-            name: "TipoPessoa",
+            name: "CPF",
             table: "Users",
-            type: "nvarchar(1)");
+            newName: "CpfCnpj");
+
+            migrationBuilder.DropColumn(
+                name: "Number",
+                table: "Users"
+                );
 
             // mudar do tipo varchar para longtext
             migrationBuilder.AlterColumn<string>(
@@ -31,9 +31,14 @@ namespace QueroServicos.Migrations
                 type: "longtext",
                 nullable: false );
 
-            migrationBuilder.DropColumn(
-                name: "Type" ,
-                table: "Users" );
+
+            migrationBuilder.AddColumn<byte[]>(
+        name: "Imagem",
+        table: "Users",
+        type: "longblob",
+        nullable: true);
+
+
 
             migrationBuilder.AlterColumn<int>(
                 name: "AddressId",

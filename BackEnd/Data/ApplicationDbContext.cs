@@ -20,6 +20,9 @@ namespace QueroServicos.Data
         public DbSet<Address> Address { get; set; }
         public DbSet<Contact> Contact { get; set; }
         public DbSet<User> Users { get; set; }
+
+        public DbSet<UserFavorite> UserFavorite { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -27,10 +30,9 @@ namespace QueroServicos.Data
                 .HasIndex(u => u.Email)
                 .IsUnique();
 
-            modelBuilder.Entity<User>()
-                .HasIndex(u => u.Number)
-                .IsUnique();
         }
+
+        public DbSet<QueroServicos.Models.UserFeedback>? UserFeedback { get; set; }
     }
     
 }
