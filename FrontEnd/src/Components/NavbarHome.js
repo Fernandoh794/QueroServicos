@@ -26,10 +26,10 @@ function NavbarHome() {
     return (
         <div id='containerNavBarHome'>
             <div id='areaLeft'>
-                <span style={{ fontSize: 22 }}><strong>Quero</strong><span style={{ color: '#390099' }}>Serviços</span></span>
+                <a href="home" style={{ fontSize: 22, textDecoration: 'none' }}><strong style={{color:'#000'}}>Quero</strong><span style={{ color: '#390099' }}>Serviços</span></a>
             </div>
             <div id='areaRight'>
-                <Tooltip title="Account settings">
+                <Tooltip title="Perfil">
                     <IconButton
                         onClick={handleClick}
                         size="small"
@@ -41,9 +41,9 @@ function NavbarHome() {
                         <PersonIcon color='disabled' sx={{ fontSize: 45 }} />
                     </IconButton>
                 </Tooltip>
-                <Button variant='text'>
-                    <FavoriteIcon color='primary' sx={{ fontSize: 40 }} />
-                </Button>
+                <IconButton variant='text' >
+                    <FavoriteIcon style={{color: '#EE4747'}} sx={{ fontSize: 35 }} />
+                </IconButton>
             </div>
             <Menu
                 anchorEl={anchorEl}

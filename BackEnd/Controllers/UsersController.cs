@@ -19,8 +19,8 @@ namespace QueroServicos.Controllers
             _context = context;
         }
 
+        //TIREI O [AUTORIZE] PARA TESTAR, RELAXA AI QUE JA JA COLOCO
         // GET: api/Users
-        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {

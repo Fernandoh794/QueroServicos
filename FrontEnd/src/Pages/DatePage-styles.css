@@ -1,0 +1,12 @@
+#container-datePage {
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+#areaInfo {
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+}

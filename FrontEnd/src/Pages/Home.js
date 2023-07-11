@@ -33,7 +33,16 @@ function Home() {
           <div style={{ height: '5vh', backgroundColor: '#390099', width: '80%', margin: 'auto', borderRadius: 10, color: '#FFF', textAlign: 'center', fontSize: 22 }}>
             Lagarto
           </div>
-          <MediaCard users={usersData} />
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap', 
+            display: 'flex', 
+            flexDirection: 'row', 
+            alignItems: 'center', 
+            justifyContent: 'space-between', padding: 25
+          }}>
+            <MediaCard users={usersData} />
+          </div>
         </div>
       </body>
     </div>

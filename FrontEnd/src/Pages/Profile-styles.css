@@ -1,0 +1,30 @@
+#btnProfile {
+    margin: 1%;
+    width: 60%;
+}
+#containerBox{
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    height: 100%; 
+    text-align: center; 
+    justify-content: center;
+}
+h1{
+    margin: 0;
+}
+#box{
+    align-self: center;
+    width: 70%;
+    background-color: '#000';
+    border-radius: 10;
+    display: flex;
+    flex-direction: column;
+}
+#btnSalvar{
+    background-color: '#0077B6';
+}
+.activeTab {
+    background-color: #390099; 
+    color: #FFFFFF;
+  }
