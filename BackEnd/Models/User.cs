@@ -25,7 +25,7 @@ namespace QueroServicos.Models
 
         [Required]
         [RegularExpression("^[1-2]$")]
-        public string TipoPessoa { get; set; }
+        public string type { get; set; }
 
 
         [Required]
@@ -34,9 +34,6 @@ namespace QueroServicos.Models
 
         [Required]
         public string Password { get; set; }
-
-        [StringLength(13)]
-        public string Number { get; set; }
 
         [Required]
         public DateTime CreatedAt { get; set; }

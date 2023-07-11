@@ -55,6 +55,7 @@ app.UseCors(c =>
 #endregion
 
 app.UseHttpsRedirection();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
