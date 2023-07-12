@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QueroServicos.Models
 {
@@ -10,8 +11,6 @@ namespace QueroServicos.Models
         [Required]
         [StringLength(100)]
         public string Description { get; set; }
-
-        public virtual List<Subcategory>? Subcategories { get; set; }
     }
     public class Subcategory
     {
@@ -22,9 +21,9 @@ namespace QueroServicos.Models
         [StringLength(100)]
         public string Description { get; set; }
 
+        [ForeignKey("Category")]
         public int CategoryId { get; set; }
 
-        [Required]
-        public Category Category { get; set; }
+        public virtual Category? Category { get; set; }
     }
 }
