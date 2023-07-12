@@ -13,6 +13,6 @@ namespace QueroServicos.Models
         [ForeignKey("Neighborhood")]
         public int NeighborhoodId { get; set; }
 
-        public virtual Neighborhood Neighborhood { get; set; }
+        public virtual Neighborhood? Neighborhood { get; set; }
     }
 }

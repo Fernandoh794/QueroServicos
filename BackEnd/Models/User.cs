@@ -19,7 +19,7 @@ namespace QueroServicos.Models
         public string LastName { get; set; }
 
         [Required]
-        [StringLength(14, MinimumLength = 11)]
+        [StringLength(18, MinimumLength = 11)]
         public string CpfCnpj { get; set; }
 
 
@@ -40,5 +40,11 @@ namespace QueroServicos.Models
 
         [Required]
         public DateTime UpdatedAt { get; set; }
+
+        [StringLength(60)]
+        public string Instagram { get; set; }
+
+        [StringLength(14)]
+        public string Whatsapp { get; set; }
     }
 }
