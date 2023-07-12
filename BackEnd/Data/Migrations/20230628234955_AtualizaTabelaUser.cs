@@ -56,16 +56,6 @@ namespace QueroServicos.Migrations
                 oldClrType: typeof(int),
                 oldType: "int" );
 
-            migrationBuilder.AlterColumn<int>(
-                name: "ContactId",
-                table: "Users",
-                type: "int",
-                nullable: true,
-                oldClrType: typeof(int),
-                oldType: "int" 
-                );
-
-
         }
 
         /// <inheritdoc />

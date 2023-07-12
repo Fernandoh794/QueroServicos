@@ -75,37 +75,6 @@ namespace QueroServicos.Migrations
                     b.ToTable("Cities", (string)null);
                 });
 
-            modelBuilder.Entity("QueroServicos.Models.Contact", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Facebook")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Instagram")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Telegram")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Whatsapp")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Contact", (string)null);
-                });
-
             modelBuilder.Entity("QueroServicos.Models.Country", b =>
                 {
                     b.Property<int>("Id")
@@ -223,7 +192,6 @@ namespace QueroServicos.Migrations
                         .HasColumnType("varchar(20)");
 
                     b.Property<string>("Instagram")
-                        .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("varchar(60)");
 
@@ -240,7 +208,6 @@ namespace QueroServicos.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Whatsapp")
-                        .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("varchar(14)");
 

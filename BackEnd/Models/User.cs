@@ -42,9 +42,9 @@ namespace QueroServicos.Models
         public DateTime UpdatedAt { get; set; }
 
         [StringLength(60)]
-        public string Instagram { get; set; }
+        public string? Instagram { get; set; }
 
         [StringLength(14)]
-        public string Whatsapp { get; set; }
+        public string? Whatsapp { get; set; }
     }
 }

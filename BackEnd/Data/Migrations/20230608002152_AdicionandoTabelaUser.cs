@@ -36,7 +36,6 @@ namespace QueroServicos.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     AddressId = table.Column<int>(type: "int", nullable: false),
                     SubcategoryId = table.Column<int>(type: "int", nullable: false),
-                    ContactId = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
@@ -49,12 +48,7 @@ namespace QueroServicos.Migrations
                         principalTable: "Address",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Users_Contact_ContactId",
-                        column: x => x.ContactId,
-                        principalTable: "Contact",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    
                     table.ForeignKey(
                         name: "FK_Users_Subcategories_SubcategoryId",
                         column: x => x.SubcategoryId,
@@ -74,11 +68,6 @@ namespace QueroServicos.Migrations
                 table: "Users",
                 column: "CNPJ",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Users_ContactId",
-                table: "Users",
-                column: "ContactId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_CPF",
