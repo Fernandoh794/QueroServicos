@@ -29,6 +29,10 @@ namespace QueroServicos.Data
                 .HasIndex(u => u.Email)
                 .IsUnique();
 
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.CpfCnpj)
+                .IsUnique();
+
         }
 
         public DbSet<QueroServicos.Models.UserFeedback>? UserFeedback { get; set; }

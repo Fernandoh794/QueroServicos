@@ -22,26 +22,30 @@ namespace QueroServicos.Controllers
         //TIREI O [AUTORIZE] PARA TESTAR, RELAXA AI QUE JA JA COLOCO
         // GET: api/Users
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers(string? type)
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             IQueryable<User> query = _context.Users;
-
-            if (!string.IsNullOrEmpty(type) && (type == "1" || type == "2"))
+            string? type = "2";
+            if (!string.IsNullOrEmpty(type) && type == "2")
             {
                 query = query.Where(u => u.type == type);
+                var category = await _context.Categories.ToListAsync();       
+            }
+            else
+            {
+                return new List<User>();
             }
 
             var users = await query.ToListAsync();
 
-            if (users == null)
+            if (users == null || users.Count == 0)
             {
                 return NotFound();
             }
 
             return users;
-
-
         }
+
 
         // GET: api/Users/5
         [HttpGet("{id}")]
@@ -107,6 +111,13 @@ namespace QueroServicos.Controllers
             if (userExists)
             {
                 return BadRequest("Email já Registrado.");
+            }
+
+            bool userExist = await _context.Users.AnyAsync(u => u.CpfCnpj == user.CpfCnpj);
+
+            if (userExist)
+            {
+                return BadRequest("CPF já Registrado.");
             }
 
 
