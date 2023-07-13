@@ -30,6 +30,7 @@ namespace QueroServicos.Models
 
         [Required]
         [MaxLength(60)]
+        [EmailAddress(ErrorMessage = "email invalido")]
         public string Email { get; set; }
 
         [Required]
