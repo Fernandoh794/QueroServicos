@@ -59,6 +59,11 @@ namespace QueroServicos.Controllers
           {
               return NotFound();
           }
+            await _context.Categories.ToListAsync();
+            await _context.Address.ToListAsync();
+            await _context.neighborhoods.ToListAsync();
+            await _context.Cities.ToListAsync();
+            await _context.States.ToListAsync();
             var user = await _context.Users.FindAsync(id);
 
             if (user == null)
