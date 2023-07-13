@@ -57,7 +57,7 @@ namespace QueroServicos.Models
 
         public virtual Address? Address { get; set; }
 
-        public byte[] Imagem { get; set; }
+        public byte[]? Imagem { get; set; }
 
     }
 }
