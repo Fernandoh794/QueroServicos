@@ -51,5 +51,13 @@ namespace QueroServicos.Models
         public int? CategoryId { get; set; }
 
         public virtual Category? Category { get; set; }
+
+        [ForeignKey("Address")]
+        public int? AddressId { get; set; }
+
+        public virtual Address? Address { get; set; }
+
+        public byte[] Imagem { get; set; }
+
     }
 }

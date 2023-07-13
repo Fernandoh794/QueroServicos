@@ -29,7 +29,11 @@ namespace QueroServicos.Controllers
             if (!string.IsNullOrEmpty(type) && type == "2")
             {
                 query = query.Where(u => u.type == type);
-                var category = await _context.Categories.ToListAsync();       
+                await _context.Categories.ToListAsync();
+                await _context.Address.ToListAsync();
+                await _context.neighborhoods.ToListAsync();
+                await _context.Cities.ToListAsync();
+                await _context.States.ToListAsync();
             }
             else
             {

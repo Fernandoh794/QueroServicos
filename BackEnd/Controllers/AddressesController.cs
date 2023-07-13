@@ -29,6 +29,9 @@ namespace QueroServicos.Controllers
           {
               return NotFound();
           }
+            await _context.neighborhoods.ToListAsync();
+            await _context.Cities.ToListAsync();
+            await _context.States.ToListAsync();
             return await _context.Address.ToListAsync();
         }
 

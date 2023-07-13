@@ -30,6 +30,7 @@ namespace QueroServicos.Controllers
               return NotFound();
           }
             var city = await _context.Cities.ToListAsync();
+            var state = await _context.States.ToListAsync();
             return await _context.neighborhoods.ToListAsync();
         }
 

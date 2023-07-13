@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QueroServicos.Data;
 
@@ -10,9 +11,11 @@ using QueroServicos.Data;
 namespace QueroServicos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class APIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230713162251_AdicionandoImagemAddressUsers")]
+    partial class AdicionandoImagemAddressUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -165,9 +168,8 @@ namespace QueroServicos.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20)");
 
-                    b.Property<byte[]>("Imagem")
-                        .IsRequired()
-                        .HasColumnType("longblob");
+                    b.Property<byte?>("Imagem")
+                        .HasColumnType("tinyint unsigned");
 
                     b.Property<string>("Instagram")
                         .HasMaxLength(60)
