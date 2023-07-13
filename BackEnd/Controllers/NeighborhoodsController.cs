@@ -29,6 +29,7 @@ namespace QueroServicos.Controllers
           {
               return NotFound();
           }
+            var city = await _context.Cities.ToListAsync();
             return await _context.neighborhoods.ToListAsync();
         }
 
@@ -41,7 +42,7 @@ namespace QueroServicos.Controllers
               return NotFound();
           }
             var neighborhood = await _context.neighborhoods.FindAsync(id);
-
+            var city = await _context.Cities.ToListAsync();
             if (neighborhood == null)
             {
                 return NotFound();

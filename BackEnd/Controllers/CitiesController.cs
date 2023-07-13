@@ -41,7 +41,7 @@ namespace QueroServicos.Controllers
               return NotFound();
           }
             var city = await _context.Cities.FindAsync(id);
-
+            var state = await _context.States.ToListAsync();
             if (city == null)
             {
                 return NotFound();

@@ -13,7 +13,6 @@ namespace QueroServicos.Data
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Subcategory> Subcategories { get; set; }
-        public DbSet<Country> Countries { get; set; }
         public DbSet<State> States { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Neighborhood> neighborhoods { get; set; }
