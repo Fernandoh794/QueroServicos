@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using QueroServicos.Data;
 using QueroServicos.Models;
 using BCrypt.Net;
+using System.Net;
+using System.Runtime.ConstrainedExecution;
 
 
 namespace QueroServicos.Controllers
@@ -77,14 +79,22 @@ namespace QueroServicos.Controllers
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
+        public async Task<IActionResult> PutUser(int id, User updatedUser)
         {
-            if (id != user.Id)
+            var existingUser = await _context.Users.FindAsync(id);
+
+            if (existingUser == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(user).State = EntityState.Modified;
+            existingUser.type = updatedUser.type ?? existingUser.type;
+            existingUser.AddressId = updatedUser.AddressId ?? existingUser.AddressId;
+            existingUser.Address = updatedUser.Address;
+            existingUser.CategoryId = updatedUser.CategoryId;
+            existingUser.Imagem = updatedUser.Imagem;
+            existingUser.UpdatedAt = updatedUser.UpdatedAt;
+            existingUser.Whatsapp = updatedUser.Whatsapp;
 
             try
             {
@@ -92,18 +102,13 @@ namespace QueroServicos.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                // Tratamento de exceção para concorrência otimista
+                return NotFound();
             }
 
             return NoContent();
         }
+
 
         // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
