@@ -170,5 +170,34 @@ namespace QueroServicos.Controllers
         {
             return (_context.Users?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+
+        [HttpGet("category/{CategoryId}")]
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers(int CategoryId)
+        {
+            IQueryable<User> query = _context.Users;
+            string? type = "2";
+            if (!string.IsNullOrEmpty(type) && type == "2")
+            {
+                query = query.Where(e => e.CategoryId == CategoryId && e.type == type);
+                await _context.Categories.ToListAsync();
+                await _context.Address.ToListAsync();
+                await _context.neighborhoods.ToListAsync();
+                await _context.Cities.ToListAsync();
+                await _context.States.ToListAsync();
+            }
+            else
+            {
+                return new List<User>();
+            }
+
+            var users = await query.ToListAsync();
+
+            if (users == null || users.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return users;
+        }
     }
 }
