@@ -240,6 +240,36 @@ namespace QueroServicos.Controllers
             return NoContent();
         }
 
+       
+        [HttpPut("changePassword/{id}")]
+        public async Task<IActionResult> PutChangePassUser(int id, User newPassUser)
+        {
+            var existingUser = await _context.Users.FindAsync(id);
+
+            if (existingUser == null)
+            {
+                return NotFound();
+            }
+
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(newPassUser.Password);
+            newPassUser.Password = passwordHash;
+            existingUser.Password = newPassUser.Password;
+            existingUser.UpdatedAt = newPassUser.UpdatedAt;
+
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                // Tratamento de exceção para concorrência otimista
+                return NotFound();
+            }
+
+            return NoContent();
+        }
+
 
     }
 }
