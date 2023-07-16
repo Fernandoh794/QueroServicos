@@ -27,25 +27,16 @@ namespace QueroServicos.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-            IQueryable<User> query = _context.Users;
-            string? type = "2";
-            if (!string.IsNullOrEmpty(type) && type == "2")
-            {
-                query = query.Where(u => u.type == type);
-                await _context.Categories.ToListAsync();
-                await _context.Address.ToListAsync();
-                await _context.neighborhoods.ToListAsync();
-                await _context.Cities.ToListAsync();
-                await _context.States.ToListAsync();
-            }
-            else
-            {
-                return new List<User>();
-            }
+            var users = await _context.Users
+                .Include(u => u.Category)
+                .Include(u => u.Address)
+                .Where(u => u.type == "2")
+                .ToListAsync();
+            await _context.neighborhoods.ToListAsync();
+            await _context.Cities.ToListAsync();
+            await _context.States.ToListAsync();
 
-            var users = await query.ToListAsync();
-
-            if (users == null || users.Count == 0)
+            if (users.Count == 0)
             {
                 return NotFound();
             }
@@ -58,16 +49,13 @@ namespace QueroServicos.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
-          if (_context.Users == null)
-          {
-              return NotFound();
-          }
-            await _context.Categories.ToListAsync();
-            await _context.Address.ToListAsync();
+            var user = await _context.Users
+                .Include(u => u.Category)
+                .Include(u => u.Address)
+                .FirstOrDefaultAsync(u => u.Id == id);
             await _context.neighborhoods.ToListAsync();
             await _context.Cities.ToListAsync();
             await _context.States.ToListAsync();
-            var user = await _context.Users.FindAsync(id);
 
             if (user == null)
             {
@@ -76,6 +64,7 @@ namespace QueroServicos.Controllers
 
             return user;
         }
+
 
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -175,31 +164,24 @@ namespace QueroServicos.Controllers
         [HttpGet("category/{CategoryId}")]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers(int CategoryId)
         {
-            IQueryable<User> query = _context.Users;
-            string? type = "2";
-            if (!string.IsNullOrEmpty(type) && type == "2")
-            {
-                query = query.Where(e => e.CategoryId == CategoryId && e.type == type);
-                await _context.Categories.ToListAsync();
-                await _context.Address.ToListAsync();
-                await _context.neighborhoods.ToListAsync();
-                await _context.Cities.ToListAsync();
-                await _context.States.ToListAsync();
-            }
-            else
-            {
-                return new List<User>();
-            }
+            var query = _context.Users
+                .Include(u => u.Category)
+                .Include(u => u.Address)
+                .Where(u => u.CategoryId == CategoryId && u.type == "2");
+            await _context.neighborhoods.ToListAsync();
+            await _context.Cities.ToListAsync();
+            await _context.States.ToListAsync();
 
             var users = await query.ToListAsync();
 
-            if (users == null || users.Count == 0)
+            if (users.Count == 0)
             {
                 return NotFound();
             }
 
             return users;
         }
+
 
         //Buscar por nome ou sobrenome
 
