@@ -212,7 +212,34 @@ namespace QueroServicos.Controllers
             return users;
         }
 
+        [HttpPut("updateProfile/{id}")]
+        public async Task<IActionResult> PutUpdateUser(int id, User updatedProfileUser)
+        {
+            var existingUser = await _context.Users.FindAsync(id);
 
+            if (existingUser == null)
+            {
+                return NotFound();
+            }
+
+            existingUser.FirstName = updatedProfileUser.FirstName;
+            existingUser.LastName = updatedProfileUser.LastName;
+            existingUser.Email = updatedProfileUser.Email;
+            existingUser.CpfCnpj = updatedProfileUser.CpfCnpj;
+            existingUser.UpdatedAt = updatedProfileUser.UpdatedAt;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                // Tratamento de exceção para concorrência otimista
+                return NotFound();
+            }
+
+            return NoContent();
+        }
 
 
     }
