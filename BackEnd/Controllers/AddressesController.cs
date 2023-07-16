@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,8 @@ namespace QueroServicos.Controllers
 
         // GET: api/Addresses
         [HttpGet]
+        [Authorize]
+
         public async Task<ActionResult<IEnumerable<Address>>> GetAddress()
         {
           if (_context.Address == null)
@@ -35,7 +38,7 @@ namespace QueroServicos.Controllers
             return await _context.Address.ToListAsync();
         }
 
-        // GET: api/Addresses/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Address>> GetAddress(int id)
         {
@@ -53,8 +56,7 @@ namespace QueroServicos.Controllers
             return address;
         }
 
-        // PUT: api/Addresses/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAddress(int id, Address address)
         {
@@ -84,8 +86,7 @@ namespace QueroServicos.Controllers
             return NoContent();
         }
 
-        // POST: api/Addresses
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Address>> PostAddress(Address address)
         {
@@ -99,7 +100,7 @@ namespace QueroServicos.Controllers
             return CreatedAtAction("GetAddress", new { id = address.Id }, address);
         }
 
-        // DELETE: api/Addresses/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAddress(int id)
         {
@@ -119,6 +120,7 @@ namespace QueroServicos.Controllers
             return NoContent();
         }
 
+        [Authorize]
         private bool AddressExists(int id)
         {
             return (_context.Address?.Any(e => e.Id == id)).GetValueOrDefault();

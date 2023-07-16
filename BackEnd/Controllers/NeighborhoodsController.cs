@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,7 @@ namespace QueroServicos.Controllers
         }
 
         // GET: api/Neighborhoods
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Neighborhood>>> Getneighborhoods()
         {
@@ -35,6 +37,7 @@ namespace QueroServicos.Controllers
         }
 
         // GET: api/Neighborhoods/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Neighborhood>> GetNeighborhood(int id)
         {
@@ -54,6 +57,7 @@ namespace QueroServicos.Controllers
 
         // PUT: api/Neighborhoods/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutNeighborhood(int id, Neighborhood neighborhood)
         {
@@ -85,6 +89,7 @@ namespace QueroServicos.Controllers
 
         // POST: api/Neighborhoods
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Neighborhood>> PostNeighborhood(Neighborhood neighborhood)
         {
@@ -99,7 +104,9 @@ namespace QueroServicos.Controllers
         }
 
         // DELETE: api/Neighborhoods/5
+        [Authorize]
         [HttpDelete("{id}")]
+
         public async Task<IActionResult> DeleteNeighborhood(int id)
         {
             if (_context.neighborhoods == null)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,7 @@ namespace QueroServicos.Controllers
         }
 
         // GET: api/UserFavorites
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserFavorite>>> GetUserFavorite(int userId, int userIdFavoritado)
         {
@@ -48,6 +50,7 @@ namespace QueroServicos.Controllers
         }
 
         // GET: api/UserFavorites/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<UserFavorite>> GetUserFavorite(int id)
         {
@@ -67,6 +70,7 @@ namespace QueroServicos.Controllers
 
         // PUT: api/UserFavorites/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUserFavorite(int id, UserFavorite userFavorite)
         {
@@ -98,6 +102,7 @@ namespace QueroServicos.Controllers
 
         // POST: api/UserFavorites
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<UserFavorite>> PostUserFavorite(UserFavorite userFavorite)
         {
@@ -112,6 +117,7 @@ namespace QueroServicos.Controllers
         }
 
         // DELETE: api/UserFavorites/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUserFavorite(int id)
         {

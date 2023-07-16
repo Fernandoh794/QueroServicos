@@ -79,10 +79,11 @@ namespace QueroServicos.Controllers
             if (authenticatedUser != null)
             {
                 var tokenString = GenerateToken(authenticatedUser);
-                response = Ok(new { token = tokenString });
+                response = Ok(new { token = tokenString, userId = authenticatedUser.Id });
             }
 
             return response;
         }
+
     }
 }

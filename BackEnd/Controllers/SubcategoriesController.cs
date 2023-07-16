@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,7 @@ namespace QueroServicos.Controllers
         }
 
         // GET: api/Subcategories
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Subcategory>>> GetSubcategories()
         {
@@ -33,6 +35,7 @@ namespace QueroServicos.Controllers
         }
 
         // GET: api/Subcategories/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Subcategory>> GetSubcategory(int id)
         {
@@ -52,6 +55,7 @@ namespace QueroServicos.Controllers
 
         // PUT: api/Subcategories/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSubcategory(int id, Subcategory subcategory)
         {
@@ -83,6 +87,7 @@ namespace QueroServicos.Controllers
 
         // POST: api/Subcategories
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Subcategory>> PostSubcategory(Subcategory subcategory)
         {
@@ -97,6 +102,7 @@ namespace QueroServicos.Controllers
         }
 
         // DELETE: api/Subcategories/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSubcategory(int id)
         {

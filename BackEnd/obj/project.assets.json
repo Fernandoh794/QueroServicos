@@ -11329,19 +11329,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aleso\\.nuget\\packages\\": {}
+    "C:\\Users\\cara-\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\QueroServicos\\BackEnd\\QueroServicos.csproj",
+      "projectUniqueName": "D:\\QueroServicos\\BackEnd\\QueroServicos.csproj",
       "projectName": "QueroServicos",
-      "projectPath": "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\QueroServicos\\BackEnd\\QueroServicos.csproj",
-      "packagesPath": "C:\\Users\\aleso\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aleso\\OneDrive\\Área de Trabalho\\QueroServicos\\BackEnd\\obj\\",
+      "projectPath": "D:\\QueroServicos\\BackEnd\\QueroServicos.csproj",
+      "packagesPath": "C:\\Users\\cara-\\.nuget\\packages\\",
+      "outputPath": "D:\\QueroServicos\\BackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\aleso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cara-\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

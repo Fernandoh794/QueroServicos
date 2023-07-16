@@ -22,8 +22,7 @@ namespace QueroServicos.Controllers
             _context = context;
         }
 
-        //TIREI O [AUTORIZE] PARA TESTAR, RELAXA AI QUE JA JA COLOCO
-        // GET: api/Users
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
@@ -45,7 +44,7 @@ namespace QueroServicos.Controllers
         }
 
 
-        // GET: api/Users/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
@@ -66,8 +65,7 @@ namespace QueroServicos.Controllers
         }
 
 
-        // PUT: api/Users/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User updatedUser)
         {
@@ -100,8 +98,6 @@ namespace QueroServicos.Controllers
         }
 
 
-        // POST: api/Users
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
@@ -136,7 +132,7 @@ namespace QueroServicos.Controllers
             return CreatedAtAction("GetUser", new { id = user.Id }, user);
         }
 
-        // DELETE: api/Users/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
@@ -156,11 +152,13 @@ namespace QueroServicos.Controllers
             return NoContent();
         }
 
+        [Authorize]
         private bool UserExists(int id)
         {
             return (_context.Users?.Any(e => e.Id == id)).GetValueOrDefault();
         }
 
+        [Authorize]
         [HttpGet("category/{CategoryId}")]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers(int CategoryId)
         {
@@ -183,8 +181,7 @@ namespace QueroServicos.Controllers
         }
 
 
-        //Buscar por nome ou sobrenome
-
+        [Authorize]
         [HttpGet("search/{name}")]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers(string name)
         {
@@ -212,6 +209,8 @@ namespace QueroServicos.Controllers
             return users;
         }
 
+
+        [Authorize]
         [HttpPut("updateProfile/{id}")]
         public async Task<IActionResult> PutUpdateUser(int id, User updatedProfileUser)
         {

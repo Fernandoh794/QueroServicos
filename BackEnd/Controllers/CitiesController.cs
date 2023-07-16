@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,7 @@ namespace QueroServicos.Controllers
         }
 
         // GET: api/Cities
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<City>>> GetCities()
         {
@@ -31,7 +33,7 @@ namespace QueroServicos.Controllers
           }
             return await _context.Cities.ToListAsync();
         }
-
+        [Authorize]
         // GET: api/Cities/5
         [HttpGet("{id}")]
         public async Task<ActionResult<City>> GetCity(int id)
@@ -50,8 +52,8 @@ namespace QueroServicos.Controllers
             return city;
         }
 
-        // PUT: api/Cities/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCity(int id, City city)
         {
@@ -81,8 +83,8 @@ namespace QueroServicos.Controllers
             return NoContent();
         }
 
-        // POST: api/Cities
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
+
         [HttpPost]
         public async Task<ActionResult<City>> PostCity(City city)
         {
@@ -96,7 +98,8 @@ namespace QueroServicos.Controllers
             return CreatedAtAction("GetCity", new { id = city.Id }, city);
         }
 
-        // DELETE: api/Cities/5
+        [Authorize]
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCity(int id)
         {
@@ -115,6 +118,8 @@ namespace QueroServicos.Controllers
 
             return NoContent();
         }
+
+        [Authorize]
 
         private bool CityExists(int id)
         {
