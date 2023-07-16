@@ -6,6 +6,7 @@ using QueroServicos.Models;
 using BCrypt.Net;
 using System.Net;
 using System.Runtime.ConstrainedExecution;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 
 namespace QueroServicos.Controllers
@@ -199,5 +200,38 @@ namespace QueroServicos.Controllers
 
             return users;
         }
+
+        //Buscar por nome ou sobrenome
+
+        [HttpGet("search/{name}")]
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers(string name)
+        {
+            if (_context == null)
+            {
+                return NotFound();
+            }
+
+            var lowerName = name.ToLower();
+
+            var users = await _context.Users
+                .Where(u => (u.FirstName.ToLower() == lowerName || u.LastName.ToLower() == lowerName) && u.type == "2")
+                .Include(u => u.Category)
+                .Include(u => u.Address)
+                .ToListAsync();
+            await _context.neighborhoods.ToListAsync();
+            await _context.Cities.ToListAsync();
+            await _context.States.ToListAsync();
+
+            if (users.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return users;
+        }
+
+
+
+
     }
 }
