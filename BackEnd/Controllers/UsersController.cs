@@ -83,6 +83,7 @@ namespace QueroServicos.Controllers
             existingUser.Imagem = updatedUser.Imagem;
             existingUser.UpdatedAt = updatedUser.UpdatedAt;
             existingUser.Whatsapp = updatedUser.Whatsapp;
+            existingUser.Instagram = updatedUser.Instagram;
 
             try
             {
