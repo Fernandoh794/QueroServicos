@@ -31,27 +31,38 @@ namespace QueroServicos.Controllers
           {
               return NotFound();
           }
+            await _context.Users.ToListAsync();
             return await _context.UserFeedback.ToListAsync();
         }
 
         // GET: api/UserFeedbacks/5
         [Authorize]
-        [HttpGet("{id}")]
-        public async Task<ActionResult<UserFeedback>> GetUserFeedback(int id)
+        [HttpGet("userprofessional/{id}")]
+        public async Task<ActionResult<IEnumerable<UserFeedback>>> GetUserFeedback(int id)
         {
-          if (_context.UserFeedback == null)
-          {
-              return NotFound();
-          }
-            var userFeedback = await _context.UserFeedback.FindAsync(id);
+            var userProfessional = await _context.Users.FindAsync(id);
 
-            if (userFeedback == null)
+            if (userProfessional == null || userProfessional.type != "2")
+            {
+                return NotFound();
+            }
+            await _context.Users.ToListAsync();
+#pragma warning disable CS8602 // Desreferência de uma referência possivelmente nula.
+#pragma warning disable CS8604 // Possível argumento de referência nula.
+            var userFeedbacks = await _context.UserFeedback
+                .Where(u => u.User.Id == id)
+                .ToListAsync();
+#pragma warning restore CS8604 // Possível argumento de referência nula.
+#pragma warning restore CS8602 // Desreferência de uma referência possivelmente nula.
+
+            if (userFeedbacks.Count == 0)
             {
                 return NotFound();
             }
 
-            return userFeedback;
+            return userFeedbacks;
         }
+
 
         // PUT: api/UserFeedbacks/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -87,7 +98,7 @@ namespace QueroServicos.Controllers
 
         // POST: api/UserFeedbacks
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
+      [Authorize]
         [HttpPost]
         public async Task<ActionResult<UserFeedback>> PostUserFeedback(UserFeedback userFeedback)
         {

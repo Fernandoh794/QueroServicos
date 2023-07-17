@@ -240,7 +240,7 @@ namespace QueroServicos.Controllers
             return NoContent();
         }
 
-       
+        [Authorize]
         [HttpPut("changePassword/{id}")]
         public async Task<IActionResult> PutChangePassUser(int id, User newPassUser)
         {
